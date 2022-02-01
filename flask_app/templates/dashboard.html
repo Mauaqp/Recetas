@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
         <div>
             <div>
                 <h1>Bienvenido {{user.first_name}}</h1>
@@ -25,8 +24,37 @@
         </div>
         <!-- Recetas -->
         <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Under 30 Minutes?</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for recipe in recipes %}
+                        <tr>
+                            <td>{{recipe.name_recipe}}</td>
+                                    {% if recipe.preparation_time < 30 %}
+                                        <td>Yes</td>
+                                    {% else %}
+                                        <td>No</td>
+                                    {% endif %}
+                                <td>
+                                <a href="/recipe/{{recipe.id}}">View Instructions</a>
+                                    {% if recipe.user_id == session.user_id %}
+                                        <a href="/edit/recipe/{{recipe.id}}">Edit</a>
+                                        <a href="/delete/recipe/{{recipe.id}}">Delete</a>
+                                    {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        
-    </main>
+
+        <div>
+        </div>
 </body>
 </html>

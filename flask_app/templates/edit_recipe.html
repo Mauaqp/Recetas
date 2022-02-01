@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
+    <title>Edit Recipe</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <!-- Fuente Balsamiq -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +13,7 @@
 </head>
 <body>
     <main>
-        <div>
-            <div>
-                <h1>Bienvenido {{user.first_name}}</h1>
-                <p>There are some recipes</p>
-            </div>
-            <div>
-                <a>Create</a>
-                <a href="/logout">Logout</a>
-            </div>
-        </div>
+        <h1>Editar receta</h1>
         <!-- Alerta flash -->
         {% with messages = get_flashed_messages(category_filter=['recipe']) %}
             {% if messages %}
@@ -35,37 +26,39 @@
             </div>
             {% endif %}
         {% endwith %}
-        <!-- Campo para añadir recetas -->
-        <form action="/recipes/new" method="POST">
+        <form action="/update/recipe" method="POST">
             <!-- Columna 1 -->
             <div>
+                <!-- Valor hidden para conexion con módulo -->
+                <input type="hidden" name ="id" value = {{edit.id}}>
                 <div class="field">
                     <label>Name:</label>
-                    <input type="text" name="name_recipe" id="name_recipe">
+                    <input type="text" name="name_recipe" id="name_recipe" placeholder="{{edit.name_recipe}}">
                 </div>
                 <div class="field">
                     <label>Description:</label>
-                    <textarea name="description" id="description"></textarea>
+                    <textarea name="description" id="description">{{edit.description}}</textarea>
                 </div>
                 <div class="field">
                     <label>Preparation time:</label>
-                    <input type="number" name="preparation_time" id="preparation_time">
+                    <input type="number" name="preparation_time" id="preparation_time" placeholder="{{edit.preparation_time}}">
                 </div>
                 <div class="field">
                     <label>Instructions</label>
-                    <textarea name="instructions" id="instructions"></textarea>
+                    <textarea name="instructions" id="instructions">{{edit.instructions}}</textarea>
                 </div>
             </div>
             <!-- Columna 2 -->
             <div>
                 <div class="field">
                     <label>Date made on:</label>
-                    <input type="date" name="created_at" id="created_at">
+                    <input type="date" name="created_at" id="created_at" placeholder="{{edit.created_at}}">
                 </div>
             </div>
-            <button type="submit">Create</button>
+            <button type="submit">Update</button>
         </form>
-
     </main>
+    
+
 </body>
 </html>
