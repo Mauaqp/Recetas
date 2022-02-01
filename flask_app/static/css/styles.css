@@ -1,0 +1,39 @@
+* {
+    font-family: 'Comic Neue', cursive;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: max-content;
+}
+/* Mensaje de alerta flash */
+.alert {
+    color: red;
+}
+/* Cajetines principales */
+.main-box {
+    padding: 5px;
+    background-color: gray;
+    margin: 10px;
+}
+.main-box h1{
+    color: blue;
+}
+
+.main-box-login {
+    padding: 5px;
+    background-color: darkseagreen;
+    margin: 10px;
+}
+
+.main-box-login h1 {
+    color: green;
+}
+
+.field {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+}
