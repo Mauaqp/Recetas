@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt( app )
 
-#rutas principales
+#ruta principales
 @app.route( '/', methods=['GET'] )
 def inicio():
     return render_template( "index.html" )
@@ -58,3 +58,11 @@ def dashboard():
 def logout():
     session.clear()
     return redirect('/')
+
+#Ruta RECETAS
+@app.route('/recipes')
+def recipes():
+    data ={
+        'id': session['user_id']
+    }
+    return render_template("recipe.html", user=User.get_by_id(data))

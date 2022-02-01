@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Fuente Balsamiq -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div>
+            <div>
+                <h1>Bienvenido {{user.first_name}}</h1>
+                <p>There are some recipes</p>
+            </div>
+            <div>
+                <a>Create</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <!-- Campo para añadir recetas -->
+        <form action="/recipes/new" method="POST">
+            <!-- Columna 1 -->
+            <div>
+                <div class="field">
+                    <label>Name:</label>
+                    <input type="text" name="name_recipe" id="name_recipe">
+                </div>
+                <div class="field">
+                    <label>Description:</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <div class="field">
+                    <label>Preparation time:</label>
+                    <input type="number" name="preparation_time" id="preparation_time">
+                </div>
+                <div class="field">
+                    <label>Instructions</label>
+                    <textarea name="instructions" id="instructions"></textarea>
+                </div>
+            </div>
+            <!-- Columna 2 -->
+            <div>
+                <div class="field">
+                    <label>Date made on:</label>
+                    <input type="date" name="created_at" id="created_at">
+                </div>
+            </div>
+            <button type="submit">Create</button>
+        </form>
+
+    </main>
+</body>
+</html>
