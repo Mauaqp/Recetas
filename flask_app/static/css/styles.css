@@ -37,3 +37,59 @@ main {
     margin-bottom: 10px;
     width: auto;
 }
+
+/* Estilos dashboard */
+.header {
+    background-color: lightgray;
+    text-align: center;
+    display: block;
+}
+
+.table-recipes {
+    width:100%;
+    border:1px solid $color-form-highlight;
+}
+
+.table-header {
+    width:100%;
+    background:#000;
+    color: white;
+    padding: 8px;
+}
+
+.table-row {
+    width:100%;
+    text-align: center;
+    padding: 5px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.create-recipe {
+    display: block;
+    margin: auto;
+}
+
+.add-recipe {
+    display: flex;
+}
+
+/* Estilos show_recipe */
+.recipe-card {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.recipe-title {
+    background-color: aqua;
+    text-align: center;
+}
+
+.card-text {
+    padding: 5px;
+}

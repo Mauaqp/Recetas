@@ -12,8 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card-body">
-        <h2 class="card-title text-primary">{{recipe.name_recipe}}</h2>
+    <div class="header">
+        <h1>Bienvenido {{user.first_name}}</h1>
+        <p>Look up this recipe</p>
+    </div>
+    <div class="options">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="recipe-card">
+        <h2 class="recipe-title">{{recipe.name_recipe}}</h2>
         <p class="card-text">Description:  {{recipe.description}}</p>
         <p class="card-text">Under 30 Minutes:
             {%  if recipe.preparation_time < 30 %}

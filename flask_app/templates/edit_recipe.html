@@ -12,8 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <h1>Editar receta</h1>
+    <main class="create-recipe">
+        <div class="header">
+            <h1>Editar receta</h1>
+        </div>
+        <div class="options">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
         <!-- Alerta flash -->
         {% with messages = get_flashed_messages(category_filter=['recipe']) %}
             {% if messages %}
@@ -28,7 +34,7 @@
         {% endwith %}
         <form action="/update/recipe" method="POST">
             <!-- Columna 1 -->
-            <div>
+            <div class="recipe-card">
                 <!-- Valor hidden para conexion con módulo -->
                 <input type="hidden" name ="id" value = {{edit.id}}>
                 <div class="field">

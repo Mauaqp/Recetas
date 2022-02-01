@@ -13,26 +13,26 @@
 </head>
 <body>
         <div>
-            <div>
+            <div class = "header">
                 <h1>Bienvenido {{user.first_name}}</h1>
                 <p>There are some recipes</p>
             </div>
-            <div>
+            <div class="options">
                 <a href="/recipes">Create</a>
                 <a href="/logout">Logout</a>
             </div>
         </div>
         <!-- Recetas -->
         <div>
-            <table>
-                <thead>
+            <table class="table-recipes">
+                <thead class="table-header">
                     <tr>
                         <th>Name</th>
                         <th>Under 30 Minutes?</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-row">
                     {% for recipe in recipes %}
                         <tr>
                             <td>{{recipe.name_recipe}}</td>

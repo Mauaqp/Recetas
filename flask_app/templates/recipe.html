@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
+    <main class="create-recipe">
         <div>
-            <div>
+            <div class="header">
                 <h1>Bienvenido {{user.first_name}}</h1>
-                <p>There are some recipes</p>
+                <p>Create your own recipe</p>
             </div>
-            <div>
-                <a>Create</a>
+            <div class="options">
+                <a href="/dashboard">Dashboard</a>
                 <a href="/logout">Logout</a>
             </div>
         </div>
@@ -36,9 +36,9 @@
             {% endif %}
         {% endwith %}
         <!-- Campo para añadir recetas -->
-        <form action="/recipes/new" method="POST">
+        <form action="/recipes/new" method="POST" class="add-recipe">
             <!-- Columna 1 -->
-            <div>
+            <div class="main-box-login">
                 <div class="field">
                     <label>Name:</label>
                     <input type="text" name="name_recipe" id="name_recipe">
@@ -62,8 +62,12 @@
                     <label>Date made on:</label>
                     <input type="date" name="created_at" id="created_at">
                 </div>
+                <div>
+                    <button type="submit">Create</button>
+                </div>
             </div>
-            <button type="submit">Create</button>
+
+            
         </form>
 
     </main>
